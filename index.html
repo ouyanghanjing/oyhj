@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>欧阳涵婧 - 个人简介</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(26, 41, 128, 0.3);
+        }
+        
+        /* 已删除 .photo 相关的所有样式 */
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header p {
+            margin: 0;
+            font-size: 20px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .tagline {
+            margin-top: 15px;
+            font-style: italic;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+        
+        .section {
+            background: white;
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .section:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        h2 {
+            color: #1a2980;
+            border-left: 5px solid #26d0ce;
+            padding-left: 15px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2::before {
+            margin-right: 10px;
+        }
+        
+        /* 关于我部分 */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: flex-start;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .school-info {
+            flex: 1;
+            min-width: 250px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            border-radius: 10px;
+            border-left: 4px solid #1a2980;
+        }
+        
+        .school-info p {
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .school-info p::before {
+            content: "🎓";
+            margin-right: 12px;
+            font-size: 18px;
+        }
+        
+        /* 项目作品集 */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 15px;
+        }
+        
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            border: 1px solid #e8e8e8;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(26, 41, 128, 0.1);
+            border-color: #26d0ce;
+        }
+        
+        .project-card h3 {
+            color: #1a2980;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .project-role {
+            color: #26d0ce;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 8px 0;
+            padding: 5px 10px;
+            background: #f0f9ff;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+        .project-desc {
+            color: #555;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #1a2980;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 18px;
+            background: #f0f9ff;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            border: 1px solid #d1e9ff;
+        }
+        
+        .project-link:hover {
+            background: #1a2980;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        /* 专业技能 */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, #e6f7ff, #d1e9ff);
+            color: #1a2980;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #d1e9ff;
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(26, 41, 128, 0.15);
+            background: linear-gradient(135deg, #d1e9ff, #b3d9ff);
+        }
+        
+        /* 联系方式 */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 20px;
+            background: #f8fafc;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .contact-item:hover {
+            background: #f0f7ff;
+            border-color: #d1e9ff;
+        }
+        
+        .contact-item span:first-child {
+            font-weight: bold;
+            color: #1a2980;
+            min-width: 80px;
+            font-size: 16px;
+        }
+        
+        a {
+            color: #1a2980;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        a:hover {
+            color: #26d0ce;
+            text-decoration: underline;
+        }
+        
+        .tech-note {
+            margin-top: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f7ff, #e6f0ff);
+            border-radius: 10px;
+            border-left: 4px solid #26d0ce;
+            font-style: italic;
+            color: #555;
+        }
+        
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+            background: white;
+            border-radius: 10px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .header p {
+                font-size: 18px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .projects {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <!-- 证件照部分已删除 -->
+        <h1>欧阳涵婧</h1>
+        <p>市场分析 · 产品运营 · 数据运营</p>
+        <p class="tagline">金融科技专业 · 数据与商业的跨界实践者</p>
+    </div>
+    
+    <div class="section">
+        <h2>👋 关于我</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>你好！我是欧阳涵婧，华南师范大学金融科技专业的2026届本科在读生。</p>
+                <p>我的核心优势在于<strong>数据理性与商业感性的结合</strong>：既能用Python/SQL进行深度数据分析，也能将复杂洞察转化为可执行的商业策略与市场内容。</p>
+                <p>在多个国家级商业策划与市场分析比赛中，我主导了从市场研究、策略制定到视觉落地的全流程，并屡获佳绩。我坚信，数据驱动的决策才是这个时代最坚实的商业基础。</p>
+            </div>
+            
+            <div class="school-info">
+                <p><strong>华南师范大学（211）</strong></p>
+                <p><strong>商学院 · 金融科技专业</strong></p>
+                <p>预计毕业：2026年6月</p>
+                <p>GPA：3.6/4.0（专业前20%）</p>
+                <p>英语：CET-6（良好读写能力）</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>🚀 核心项目作品集</h2>
+        <div class="projects">
+            <div class="project-card">
+                <h3>“星沐森林”自然研学基地品牌全案</h3>
+                <p class="project-role">角色：品牌策略与视觉负责人 | 奖项：全国高校商业精英挑战赛国家级二等奖</p>
+                <p class="project-desc">主导市场诊断、品牌定位与视觉概念设计。通过波特五力模型分析行业，构建产品四象限分析体系，完成从策略到体验触点的完整策划。</p>
+                <a href="javascript:void(0)" class="project-link" onclick="alert('项目详细资料可通过邮箱索取')">📄 查看项目策略摘要</a>
+            </div>
+            
+            <div class="project-card">
+                <h3>AI辅助学习用户研究与产品洞察</h3>
+                <p class="project-role">角色：数据分析负责人 | 奖项：正大杯市场调查与分析大赛国家级三等奖</p>
+                <p class="project-desc">基于1200+份问卷数据，运用K-means聚类、有序Logistic回归、CRITIC权重法等模型，完成用户分群、驱动因素挖掘与需求优先级排序。</p>
+                <a href="javascript:void(0)" class="project-link" onclick="alert('数据分析报告可通过邮箱索取')">📈 查看数据分析报告</a>
+            </div>
+            
+            <div class="project-card">
+                <h3>上市公司数字化转型研究</h3>
+                <p class="project-role">角色：独立研究员</p>
+                <p class="project-desc">独立使用Python编写爬虫，解析1000+份上市公司年报，构建"数字化转型指数"，研究其对企业绩效（ROA/ROE）的影响路径。</p>
+                <a href="javascript:void(0)" class="project-link" onclick="alert('研究方法与框架文档可通过邮箱索取')">🔍 查看研究方法与框架</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>💼 专业技能</h2>
+        <div class="skills">
+            <span class="skill-tag">Python数据分析</span>
+            <span class="skill-tag">SQL数据库查询</span>
+            <span class="skill-tag">Excel高级分析</span>
+            <span class="skill-tag">市场调研与分析</span>
+            <span class="skill-tag">竞品分析</span>
+            <span class="skill-tag">品牌策划</span>
+            <span class="skill-tag">数据可视化</span>
+            <span class="skill-tag">HTML/CSS网页制作</span>
+            <span class="skill-tag">视频剪辑基础</span>
+            <span class="skill-tag">PPT</span>
+            <span class="skill-tag">SPSS统计分析</span>
+            <span class="skill-tag">团队协作与领导</span>
+        </div>
+        
+        <div class="tech-note">
+            <p>💡 <strong>技术备注</strong>：本作品集页面采用原生HTML实现响应式布局与交互动效。代码已通过GitHub Pages部署，展示了将内容数字化、产品化的基础能力。</p>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>📞 联系与沟通</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>邮箱：</span>
+                <a href="mailto:1444206216@qq.com">1444206216@qq.com</a>
+            </div>
+            <div class="contact-item">
+                <span>电话：</span>
+                <span>180-2690-4396</span>
+            </div>
+            <div class="contact-item">
+                <span>求职意向：</span>
+                <span>市场分析 / 产品策划 / 产品运营</span>
+            </div>
+            <div class="contact-item">
+                <span>实习时间：</span>
+                <span>可立即到岗，支持3个月以上长期实习</span>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #f0f7ff, #e6f0ff); border-radius: 10px; border-left: 4px solid #1a2980;">
+            <p style="margin: 0; color: #1a2980; font-style: italic; font-size: 16px;">
+                "我期待将数据驱动的分析能力与商业策略思维相结合，在实战中解决真实的商业问题，为团队贡献可衡量的价值。"
+            </p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2026 欧阳涵婧 - 个人作品集</p>
+        <p style="margin-top: 8px; color: #888;">最后更新：2026年12月 | 本页面代码由本人独立编写</p>
+        <p style="margin-top: 8px; color: #888;">欢迎通过邮箱联系获取更多项目资料</p>
+    </div>
+</body>
+</html>
